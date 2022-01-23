@@ -1,0 +1,31 @@
+package com.adactin.helper;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.Properties;
+
+public class Configuration_Reader {
+	
+	public static Properties prop;
+	
+	public Configuration_Reader() throws Throwable {
+		File f = new File("C:\\Users\\Admin\\eclipse-workspace\\Adactin_Cucumber\\src\\test\\java\\com\\adactin\\properties\\Configuration.properties");
+		FileInputStream fis = new FileInputStream(f);
+		
+		prop = new Properties();
+		prop.load(fis);
+	}
+
+	
+	public String getBrowser() {
+		String browser = prop.getProperty("browser");
+		return browser;
+	}
+	
+	public String getUrl() {
+		String url = prop.getProperty("url");
+		return url;
+	}
+
+}

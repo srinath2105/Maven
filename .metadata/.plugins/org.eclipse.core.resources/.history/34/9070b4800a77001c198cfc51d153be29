@@ -1,0 +1,23 @@
+package com.pageobjectmanager;
+
+import java.sql.Driver;
+
+import org.openqa.selenium.WebDriver;
+
+import com.pom.Login_Page;
+
+public class Page_Object_Manager {
+	public static WebDriver driver;
+	
+	private Login_Page lp;
+
+	public Page_Object_Manager(WebDriver driver2) {
+		this.driver= driver2;
+	}
+
+	public Login_Page getLp() {
+		lp= new Login_Page(driver);
+		return lp;
+	}
+
+}
